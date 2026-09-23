@@ -2,7 +2,7 @@
 
 Skill สำหรับสร้าง `Synthetic User Persona`, จำลอง `Synthetic User Interview` และเตรียม `Synthetic Usability Testing` จากเอกสารผลิตภัณฑ์และข้อมูลวิจัยที่ผู้ใช้ให้มา
 
-> Synthetic user คือสมมติฐานสำหรับ rehearsal และการเตรียม test scenario ไม่ใช่หลักฐานจากผู้ใช้จริง ควรติดป้ายเป็น `E1: Hypothesis` จนกว่าจะได้รับการยืนยันด้วย real-user research, analytics, support data หรือ usability testing
+> Synthetic user คือสมมติฐานสำหรับ practice และการเตรียม test scenario ไม่ใช่หลักฐานจากผู้ใช้จริง ควรติดป้ายเป็น `E1: Hypothesis` จนกว่าจะได้รับการยืนยันด้วย real-user research, analytics, support data หรือ usability testing
 
 ## สิ่งที่อยู่ใน repo
 
