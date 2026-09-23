@@ -61,8 +61,10 @@ node scripts/validate-persona.mjs [PERSONA_OUTPUT_PATH]
 
 ใช้ prompt นี้เมื่อมีเว็บที่รันได้จริงและต้องการทดสอบด้วย Playwright:
 
+`[PRD_PATH]`, `[UX_PATH]`, `[PERSONA_FILES]` และ `[APP_URL]` เป็น placeholder ต้องแทนด้วย path/URL จริงก่อนใช้งาน โดย `[PERSONA_FILES]` ต้องเป็นรายการ persona ครบ 5 ไฟล์
+
 ```text
-อ่าน PRD.md, UX.md และ PERSONA_JANE.md ถึง PERSONA_PALM.md
+อ่าน [PRD_PATH], [UX_PATH] และ [PERSONA_FILES] ให้ครบทั้ง 5 ไฟล์
 
 ใช้ synthetic-user-persona จำลอง usability testing ของ AI Hub
 สร้าง test scenarios สำหรับทั้ง 5 personas
