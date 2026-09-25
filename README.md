@@ -92,7 +92,35 @@ node scripts/validate-persona.mjs [PERSONA_OUTPUT_PATH]
 - สรุปผลรวมเป็นตาราง Scenario → Persona → Status → Evidence → Recommendation
 ```
 
-ถ้าเป็น mobile ให้เปลี่ยน `Playwright` เป็น `Maestro` และเพิ่ม device/emulator, OS, app build และไฟล์ Maestro flow ใน inputs
+## Prompt Placeholder: Synthetic Usability Testing สำหรับ Mobile App
+
+ใช้ prompt นี้เมื่อมี mobile app และต้องการทดสอบด้วย Maestro MCP:
+
+`[PRD_PATH]`, `[UX_PATH]`, `[RESEARCH_DATA_PATH]`, `[INTERVIEW_SYNTHETIC_PERSONAS_PATH]`, `[TEST_DIRECTORY]` และ `[REPORT_PATH]` เป็น placeholder ต้องแทนด้วย path จริงก่อนใช้งาน
+
+```text
+ใช้ Synthetic User Persona skill เพื่ออ่านและวิเคราะห์ไฟล์ [PRD_PATH], [UX_PATH], [RESEARCH_DATA_PATH] และ [INTERVIEW_SYNTHETIC_PERSONAS_PATH] นี้ แล้วรัน Synthetic Usability Testing ตามแต่ละ persona และ scenario อย่างเคร่งครัด
+
+ห้ามสร้าง persona ใหม่ ห้ามเติมข้อมูลที่ไม่มีแหล่งอ้างอิง และต้องระบุ synthetic insight เป็น `E1: Synthetic Hypothesis`
+
+ใช้ Maestro MCP ตามลำดับ:
+`list_devices → inspect_screen → run`
+
+ให้ inspect UI hierarchy ก่อนเขียน selector ใช้ accessibility label/role เป็นหลัก จากนั้นสร้าง Maestro test case แยกตาม persona/scenario ใน `[TEST_DIRECTORY]` และรันบน simulator/device จริง เปิดผลผ่าน Maestro Viewer ใน Codex
+
+Role-play ตาม goal, knowledge, behavior, risk tolerance และ pain point ของแต่ละ persona ห้ามข้ามขั้นตอนหรือสมมติว่าผู้ใช้รู้สิ่งที่ persona ไม่รู้
+
+สร้างรายงานใน `[REPORT_PATH]` พร้อม:
+- Persona และ scenario summary
+- Test case mapping
+- Role-play transcript
+- Maestro runtime evidence
+- PASS / FAIL / PARTIAL / BLOCKED
+- Pain points และ recommendations
+- Known limitations
+
+รายงาน PASS ได้เฉพาะกรณีที่มี runtime evidence จริง ตรวจ syntax, typecheck, format และ diff ก่อนสรุปผล และห้ามอ้าง UI pass เป็นหลักฐานของ backend หรือ real-user validation
+```
 
 ## Test status
 
